@@ -112,7 +112,6 @@ function App() {
                 <br />
                 <button onClick={() => handleDelete(item.Name)}>Delete</button>
               </li>
-              
             ))
           ) : (
             <li>No data available</li>
