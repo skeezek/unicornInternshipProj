@@ -108,7 +108,7 @@ function App() {
                 <strong>Market Share:</strong> {item.marketShare}%<br />
                 <strong>Renewable Energy Percentage:</strong>{" "}
                 {item.renewableEnergyPercentage}%<br />
-                <strong>Yearly Revenue:</strong> ${item.yearlyRevenue}
+                <strong>Yearly Revenue:</strong> €{item.yearlyRevenue}
                 <br />
                 <button onClick={() => handleDelete(item.Name)}>Delete</button>
               </li>
