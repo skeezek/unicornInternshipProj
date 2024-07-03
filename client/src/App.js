@@ -84,10 +84,9 @@ function App() {
     })
       .then((response) => response.json())
       .then(() => {
-        setBackendData(
-          backendData.filter((provider) => provider.name !== name),
-        );
+        getProviders().then((data) => setBackendData(data));
         setShowDeleteForm(false); // Hide the form after deletion
+        
       })
       .catch((error) => {
         console.error("Error deleting provider:", error);
@@ -111,8 +110,9 @@ function App() {
                 {item.renewableEnergyPercentage}%<br />
                 <strong>Yearly Revenue:</strong> ${item.yearlyRevenue}
                 <br />
-                <button onClick={() => handleDelete(item._id)}>Delete</button>
+                <button onClick={() => handleDelete(item.Name)}>Delete</button>
               </li>
+              
             ))
           ) : (
             <li>No data available</li>
