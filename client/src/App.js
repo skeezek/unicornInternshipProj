@@ -118,18 +118,18 @@ function App() {
           )}
         </ul>
 
-        <button onClick={() => setShowCreateForm(!showCreateForm)}>
+        <button class = "crudButton" onClick={() => setShowCreateForm(!showCreateForm)}>
           Create New Provider
         </button>
-        <button onClick={() => setShowUpdateForm(!showUpdateForm)}>
+        <button class = "crudButton" onClick={() => setShowUpdateForm(!showUpdateForm)}>
           Update Provider
         </button>
-        <button onClick={() => setShowDeleteForm(!showDeleteForm)}>
+        <button class = "crudButton" onClick={() => setShowDeleteForm(!showDeleteForm)}>
           Delete Provider
         </button>
 
         {showCreateForm && (
-          <div>
+          <div class ="createForm">
             <h2>Create New Provider</h2>
             <input
               type="text"
@@ -177,12 +177,13 @@ function App() {
                 })
               }
             />
+            <br></br>
             <button onClick={handleCreate}>Create</button>
           </div>
         )}
 
         {showUpdateForm && (
-          <div>
+          <div class ="updateForm">
             <h2>Update Provider</h2>
             <input
               type="text"
@@ -236,12 +237,13 @@ function App() {
                 })
               }
             />
+            <br></br>
             <button onClick={handleUpdate}>Update</button>
           </div>
         )}
 
         {showDeleteForm && (
-          <div>
+          <div class ="deleteForm">
             <h2>Delete Provider</h2>
             <input
               type="text"
@@ -251,6 +253,7 @@ function App() {
                 setUpdateProvider({ ...updateProvider, Name: e.target.value })
               }
             />
+            <br></br>
             <button onClick={() => handleDelete(updateProvider.Name)}>
               Delete
             </button>
